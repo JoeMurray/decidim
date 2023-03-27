@@ -43,6 +43,11 @@ edit_link(
       <div class="content-block__description">
         <%= decidim_sanitize_editor translated_attribute(current_participatory_space.short_description) %>
       </div>
+
+      <%= link_to description_assembly_path, class: "button button__lg button__text-secondary" do %>
+        <span><%= t("more_info", scope: "decidim.content_blocks.participatory_space_main_data") %></span>
+        <%= icon "arrow-right-line" %>
+      <% end %>
     </div>
 
     <div class="assembly__nav-container">
