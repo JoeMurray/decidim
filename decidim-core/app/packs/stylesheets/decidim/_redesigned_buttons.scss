@@ -65,6 +65,7 @@
     @apply text-gray-2 bg-background-3 border border-gray-2;
   }
 
+  &.is-hover,
   &:not([disabled]):not([class*="button__text"]):hover{
     @apply text-white;
 
