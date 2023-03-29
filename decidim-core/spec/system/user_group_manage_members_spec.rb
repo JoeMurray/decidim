@@ -24,7 +24,7 @@ describe "User group manage members", type: :system do
     end
 
     it "rejects the user that accesses manually" do
-      visit decidim.group_manage_users_path(user_group.nickname)
+      visit decidim.profile_group_members_path(user_group.nickname)
       expect(page).to have_content("You are not authorized to perform this action")
     end
   end
@@ -74,7 +74,7 @@ describe "User group manage members", type: :system do
         expect(page).to have_no_css("#list-request")
         expect(page).to have_content("Join request successfully accepted")
         expect(page).to have_content(requested_user.name)
-        expect(page).to have_content("Role: Member")
+        expect(page).to have_content("Member")
       end
 
       it "allows rejecting a join request" do
