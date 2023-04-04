@@ -21,7 +21,7 @@ inputs:
     required: false
   redesign_enabled:
     description: "Enable redesign"
-    default: "false"
+    default: "true"
     required: false
 
 runs:
