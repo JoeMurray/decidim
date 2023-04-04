@@ -12,9 +12,6 @@ edit_link(
   <%= stylesheet_pack_tag "decidim_assemblies", media: "all" %>
 <% end %>
 
-<% content_for :js_content do %>
-  <%= javascript_pack_tag "decidim_assemblies" %>
-<% end %>
 
 <% content_for :aside do %>
   <h1 class="h3 md:h1 decorator"><%= t("decidim.menu.assemblies") %></h1>
@@ -37,3 +34,5 @@ edit_link(
 
   <%= render partial: "collection" %>
 <% end %>
+
+<%= append_javascript_pack_tag "decidim_assemblies" %>
