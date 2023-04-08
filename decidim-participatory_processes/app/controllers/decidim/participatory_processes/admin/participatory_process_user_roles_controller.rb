@@ -102,7 +102,7 @@ module Decidim
         def collection
           @collection ||= Decidim::ParticipatoryProcessUserRole
                           .joins(:user)
-                          .where(participatory_process: current_participatory_process) # .order(:role, "decidim_users.name")
+                          .where(participatory_process: current_participatory_process)
         end
       end
     end
