@@ -511,6 +511,8 @@ en:
             upcoming: Upcoming
           see: See
           type: Type
+        index:
+          loading: Loading results...
         show:
           title: About this process
       show:

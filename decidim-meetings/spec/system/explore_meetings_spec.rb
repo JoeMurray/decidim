@@ -392,9 +392,7 @@ describe "Explore meetings", :slow, type: :system do
 
         find("a.meeting-list").click
 
-        # REDESIGN_PENDING - Replace this interaction with a click on back link
-        # when available
-        find("div[data-drawer-close]").click
+        click_link "Back"
 
         expect(page).to have_css(meetings_selector, count: 1)
       end
