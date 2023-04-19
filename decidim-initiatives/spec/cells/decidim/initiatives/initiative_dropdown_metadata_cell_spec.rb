@@ -4,13 +4,13 @@ require "spec_helper"
 
 require "decidim/core/test/shared_examples/participatory_space_dropdown_metadata_cell_examples"
 
-module Decidim::Conferences
-  describe ConferenceDropdownMetadataCell, type: :cell do
+module Decidim::Initiatives
+  describe InitiativeDropdownMetadataCell, type: :cell do
     controller Decidim::ApplicationController
 
-    subject { cell("decidim/conferences/conference_dropdown_metadata", model).call }
+    subject { cell("decidim/initiatives/initiative_dropdown_metadata", model).call }
 
-    let(:model) { create(:conference, hashtag:) }
+    let(:model) { create(:initiative, hashtag:) }
     let(:hashtag) { nil }
 
     include_examples "participatory space dropdown metadata cell"
