@@ -32,7 +32,14 @@ module Decidim
         }, constraints: { initiative_id: /[0-9]+/ }
 
         resources :initiatives, param: :slug, only: [:index, :show, :edit, :update], path: "initiatives" do
-          resources :initiative_signatures
+          resources :initiative_signatures, only: [:index] do
+            collection do
+              match :finish, via: [:get, :put]
+              match :fill_personal_data, via: [:get, :put]
+              match :sms_phone_number, via: [:get, :put]
+              match :sms_code, via: [:get, :put]
+            end
+          end
 
           member do
             get :authorization_sign_modal, to: "authorization_sign_modals#show"
