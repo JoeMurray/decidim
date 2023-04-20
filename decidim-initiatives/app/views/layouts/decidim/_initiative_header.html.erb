@@ -23,9 +23,5 @@
       </div>
     </div>
   </div>
-  <%
-    components = current_participatory_space.components.published.or(Decidim::Component.where(id: self.try(:current_component)))
-  %>
-
   <%= extended_navigation_bar(initiative_nav_items(current_participatory_space)) %>
 </div>
