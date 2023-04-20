@@ -45,24 +45,6 @@ module Decidim
 
         send("#{tag}_to", "", html_options, &)
       end
-
-      def question_nav_items(question)
-        components = question.components.published.or(Decidim::Component.where(id: try(:current_component)))
-
-        [
-          {
-            name: t("question_menu_item", scope: "layouts.decidim.question_components"),
-            url: decidim_consultations.question_path(question),
-            active: is_active_link?(decidim_consultations.question_path(question), :exclusive)
-          }
-        ] + components.map do |component|
-          {
-            name: translated_attribute(component.name),
-            url: main_component_path(component),
-            active: is_active_link?(main_component_path(component), :inclusive)
-          }
-        end
-      end
     end
   end
 end
