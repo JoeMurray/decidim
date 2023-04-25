@@ -39,8 +39,6 @@ module Decidim
       end
 
       def count
-        # REDESIGN_PENDING: Use the following call to content block when
-        # available merging https://github.com/decidim/decidim/pull/10491
         cell("decidim/participatory_process_groups/content_blocks/related_processes", nil, resource: model).total_count
       end
     end
