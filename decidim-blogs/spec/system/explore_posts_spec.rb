@@ -36,7 +36,9 @@ describe "Explore posts", type: :system do
       end
 
       it "lists 10 resources per page by default" do
-        expect(page).to have_css(resource_selector, count: 10)
+        skip_unless_redesign_enabled
+
+        expect(page).to have_selector("#blogs > a", count: 10)
         expect(page).to have_css("[data-pages] [data-page]", count: 2)
       end
     end
@@ -48,8 +50,10 @@ describe "Explore posts", type: :system do
       before { visit_component }
 
       it "shows only published blogs" do
+        skip_unless_redesign_enabled
+
         expect(Decidim::Blogs::Post.count).to eq(3)
-        expect(page).to have_css(resource_selector, count: 2)
+        expect(page).to have_selector("#blogs > a", count: 2)
       end
     end
   end
