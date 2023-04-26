@@ -6,6 +6,9 @@
   <%= stylesheet_pack_tag "decidim_budgets", media: "all" %>
 <% end %>
 
+
+<%= render partial: "budget_summary", locals: { include_heading: true, project_item: false, responsive: true } %>
+
 <% content_for :aside do %>
   <h3 class="h3 decorator"><%= t("decidim.budgets.projects.projects_for", name: translated_attribute(budget.title)) %></h3>
 
@@ -14,6 +17,8 @@
 
 <%= render layout: "layouts/decidim/shared/layout_two_col" do %>
   <%= render partial: "exit_modal" %>
+  <%= render partial: "budget_excess" %>
+  <%= render partial: "budget_confirm" %>
 
   <div class="voting-wrapper">
     <div class="budget-summary__container">
@@ -22,7 +27,7 @@
           <%= t("decidim.budgets.projects.projects_for", name: translated_attribute(budget.title)) %>
         </h2>
       <% else %>
-        <%= render partial: "budget_summary", locals: { include_heading: true, project_item: false } %>
+        <%= render partial: "budget_summary", locals: { include_heading: true, project_item: false, responsive: false } %>
       <% end %>
     </div>
 
