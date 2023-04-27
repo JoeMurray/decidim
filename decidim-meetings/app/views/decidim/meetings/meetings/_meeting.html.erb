@@ -35,11 +35,15 @@
 
     <%= cell "decidim/meetings/redesigned_meeting_data", meeting %>
 
+    <%= render partial: "actions" %>
+
     <% if meeting.agenda.present? && meeting.agenda.visible? %>
       <%= render "meeting_agenda" %>
     <% end %>
 
-    <%= render partial: "actions" %>
+    <% if meeting.closed? && meeting.closing_visible? %>
+      <%= render "meeting_minutes" %>
+    <% end %>
 
     <%= pad_iframe_for meeting %>
 
