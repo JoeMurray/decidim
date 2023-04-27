@@ -63,7 +63,7 @@ extra_admin_link(
                         @proposal.identities.first&.presenter
                       end %>
 
-        <%= cell "decidim/author", author, from: @proposal, context_actions: nil, layout: :compact %>
+        <%= cell "decidim/redesigned_author", author, from: @proposal, context_actions: nil, layout: :compact %>
 
         <% if not ["section","subsection"].include? @proposal.participatory_text_level %>
           <%== cell("decidim/proposals/proposal_m", @proposal, full_badge: true).badge %>
@@ -107,7 +107,6 @@ extra_admin_link(
                           It would be useful to move such list to the core, in order to reuse it elsewhere
                           In any case, these blocks should go inside the tabs-panels structure  %>
 
-    <%= cell "decidim/endorsers_list", @proposal %>
     <%= cell "decidim/amendable/amendments", @proposal %>
 
     <%= render partial: "actions" %>
@@ -124,25 +123,25 @@ extra_admin_link(
           <%= content_tag :li, class: "drawer-metadata__item" do %>
             <%= content_tag :button, t("decidim.fingerprint.check"), data: { dialog_open: fingerprint_id } %>
           <% end %>
-          <%= decidim_modal id: fingerprint_id, class: "fingerprint-modal" do %>
-            <div data-dialog-container>
-              <%= icon "fingerprint-line" %>
-              <h2 id="dialog-title-<%= fingerprint_id %>" tabindex="-1" data-dialog-title><%= t "decidim.fingerprint.title" %></h2>
-              <div class="fingerprint-modal__container">
-                <p id="dialog-desc-<%= fingerprint_id %>"><%= t "decidim.fingerprint.explanation" %></p>
-                <div>
-                  <span class="fingerprint-modal__span"><%= t "decidim.fingerprint.value" %>:</span>
-                  <code class="fingerprint-modal__code"><%= decidim_html_escape @proposal.fingerprint.value %></code>
-                </div>
-                <div>
-                  <span class="fingerprint-modal__span"><%= t "decidim.fingerprint.source" %>:</span>
-                  <code class="fingerprint-modal__code"><%= @proposal.fingerprint.source %></code>
-                </div>
-                <p><%= t("decidim.fingerprint.replicate_help", online_calculator_link: link_to(t("decidim.fingerprint.online_calculator_name"), "http://www.md5calc.com/sha256", target: "_blank", rel: "noopener")).html_safe %>
-              </div>
-            </div>
-          <% end %>
-        </ul>
+       </ul>
+       <%= decidim_modal id: fingerprint_id, class: "fingerprint-modal" do %>
+         <div data-dialog-container>
+           <%= icon "fingerprint-line" %>
+           <h2 id="dialog-title-<%= fingerprint_id %>" tabindex="-1" data-dialog-title><%= t "decidim.fingerprint.title" %></h2>
+           <div class="fingerprint-modal__container">
+             <p id="dialog-desc-<%= fingerprint_id %>"><%= t "decidim.fingerprint.explanation" %></p>
+             <div>
+               <span class="fingerprint-modal__span"><%= t "decidim.fingerprint.value" %>:</span>
+               <code class="fingerprint-modal__code"><%= decidim_html_escape @proposal.fingerprint.value %></code>
+             </div>
+             <div>
+               <span class="fingerprint-modal__span"><%= t "decidim.fingerprint.source" %>:</span>
+               <code class="fingerprint-modal__code"><%= @proposal.fingerprint.source %></code>
+             </div>
+             <p><%= t("decidim.fingerprint.replicate_help", online_calculator_link: link_to(t("decidim.fingerprint.online_calculator_name"), "http://www.md5calc.com/sha256", target: "_blank", rel: "noopener")).html_safe %>
+           </div>
+         </div>
+       <% end %>
       </div>
     <% end %>
   </div>

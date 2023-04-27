@@ -4,7 +4,7 @@
 
     <% @collaborative_draft.requesters.each do |requester| %>
       <div id="request_<%= requester.id %>" class="flex flex-col gap-2 items-stretch">
-        <%= cell "decidim/author", present(requester) %>
+        <%= cell "decidim/redesigned_author", present(requester) %>
 
         <div class="flex gap-1 [&>*]:grow">
           <%= render partial: "accept_request_access_form", locals: { requester: requester } %>
