@@ -343,6 +343,10 @@ en:
           participatory_structure: How is it decided
           target: Who participates
           title: About this assembly
+        filters:
+          names:
+            all: All
+          type: Type
         show:
           title: About this assembly
       assembly_members:

@@ -22,12 +22,12 @@ module Decidim
 
         private
 
-        def resource
-          options[:resource] || super
-        end
-
         def link_name
           resource.is_a?(Decidim::ParticipatoryProcess) ? "related_processes" : "included_participatory_processes"
+        end
+
+        def resource
+          options[:resource] || super
         end
 
         def limit

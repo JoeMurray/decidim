@@ -67,7 +67,7 @@ module Decidim
         {
           with_scope: nil,
           with_area: nil,
-          type_id_eq: nil
+          with_type: nil
         }
       end
 
