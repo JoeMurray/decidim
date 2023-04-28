@@ -316,6 +316,7 @@ module Decidim
 
           content_block.settings do |settings|
             settings.attribute :max_results, type: :integer, default: 6
+            settings.attribute :default_filter, type: :enum, default: "active", choices: %w(active all)
           end
         end
       end
