@@ -17,15 +17,9 @@ module Decidim
         end
 
         def filtered_processes
-          return related_processes unless filter_active?
+          return related_processes unless limit?
 
-          related_processes.active
-        end
-
-        def limited_processes
-          return filtered_processes unless limit?
-
-          filtered_processes.limit(limit)
+          related_processes.limit(limit)
         end
 
         def total_count
@@ -46,16 +40,12 @@ module Decidim
           @limit ||= model.settings.try(:max_results)
         end
 
-        def filter_active?
-          default_filter == "active"
-        end
-
-        def default_filter
-          model.settings.try(:default_filter)
-        end
-
         def limit?
           limit.to_i.positive?
+        end
+
+        def title
+          t("related_processes", scope: "decidim.participatory_processes.show")
         end
       end
     end

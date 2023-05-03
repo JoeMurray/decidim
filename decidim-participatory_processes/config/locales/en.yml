@@ -392,6 +392,7 @@ en:
           participatory_structure: How is it decided
           target: Who participates
         participatory_processes:
+          active: Active participatory processes
           name: Participatory processes
         stats:
           name: Statistics
@@ -414,7 +415,6 @@ en:
             all: All
             max_results: Maximum amount of elements to show
             selection_criteria: Selection criteria
-            unlimited: Unlimited
         new_import:
           accepted_types:
             json: JSON
