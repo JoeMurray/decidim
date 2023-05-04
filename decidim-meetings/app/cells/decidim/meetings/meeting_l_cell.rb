@@ -27,6 +27,10 @@ module Decidim
         render
       end
 
+      def image
+        render
+      end
+
       private
 
       def metadata_cell
