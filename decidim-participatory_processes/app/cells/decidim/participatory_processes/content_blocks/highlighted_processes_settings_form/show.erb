@@ -1,4 +1,3 @@
 <% form.fields_for :settings, form.object.settings do |settings_fields| %>
-  <%= settings_fields.select :max_results, [3, 6, 9, 12, unlimited_label], prompt: "", label: max_results_label %>
-  <%= settings_fields.select(:default_filter, default_filter_options, prompt: "", label: default_filter_label) if include_default_filter_setting? %>
+  <%= settings_fields.select :max_results, [6, 9, 12], prompt: "", label: label %>
 <% end %>
