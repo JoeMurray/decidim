@@ -534,7 +534,6 @@ en:
         name: HTML block
       last_activity:
         name: Last activity
-        see_all_activity: See all the activity
         title: Last activity
         view_all: View all
       last_activity_settings_form:
@@ -1154,7 +1153,7 @@ en:
     metadata:
       progress:
         active: Active
-        finished: Finished
+        finished: 'Finished: %{end_date}'
         not_started: Not started yet
         remaining: "%{time_distance} remaining"
     metrics:
@@ -1425,6 +1424,7 @@ en:
     searches:
       filters:
         jump_to: 'Jump to:'
+        search: Search
         state:
           active: Active
           all: All
@@ -1433,6 +1433,7 @@ en:
       filters_small_view:
         close_modal: Close modal
         filter: Filter
+        filter_and_search: Filter and Search
         filter_by: Filter by
         unfold: Unfold
       results:
@@ -1489,7 +1490,9 @@ en:
         remove_recipient: Remove recipient %{name}
       participatory_space_filters:
         filters:
+          area: Area
           areas: Areas
+          scope: Scope
           select_an_area: Select an area
       public_participation:
         public_participation: Show my attendance publicly
