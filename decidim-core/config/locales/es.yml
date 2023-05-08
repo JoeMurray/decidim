@@ -792,6 +792,7 @@ es:
     filters:
       linked_classes:
         all: Todas
+        answer: Answer
         collaborative_draft: Borrador colaborativo
         dummy_resource: Recursos de prueba
         meeting: Encuentros
